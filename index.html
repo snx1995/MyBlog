@@ -8,7 +8,7 @@
 <body>
     <div class="main">
         <div class="nav">
-            <img src="img/logo.png" class="logo" alt="">
+            <img src="img/logo.png" class="logo" alt="" id="logo">
             <ul>
                 <li class="active">Home</li>
                 <li>Articles</li>
@@ -20,4 +20,20 @@
         <img src="img/mainText.png" alt="" class="main-img abs-center">
     </div>
 </body>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    var navCtrl = {
+        options:$(".nav li"),
+        init:function () {
+            this.options.click(function () {
+                navCtrl.options.removeClass("active");
+                $(this).addClass("active");
+            })
+        }
+    };
+    $(document).ready(function () {
+        navCtrl.init();
+    })
+</script>
 </html>
